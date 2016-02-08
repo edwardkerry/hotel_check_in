@@ -1,0 +1,18 @@
+{
+  "name": "hotel_check_in",
+  "description": "Final project",
+  "main": "",
+  "authors": [
+    "Chris Wynne <chris.wynndow@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Wynndow/hotel_check_in",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
