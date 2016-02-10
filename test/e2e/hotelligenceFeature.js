@@ -5,4 +5,10 @@ describe('Hotelligence', function() {
     expect(browser.getTitle()).toEqual('Hotelligence');
   });
 
+  browser.get('/app/');
+
+ it('should automatically redirect to /home when location hash/fragment is empty', function() {
+   expect(browser.getLocationAbsUrl()).toMatch("/home");
+ });
+
 });
