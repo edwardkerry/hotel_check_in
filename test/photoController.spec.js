@@ -43,5 +43,20 @@ describe('photoController', function() {
 
     });
 
+    describe('#storePhoto', function() {
+
+
+      it('should be defined', function() {
+        expect(ctrl.storePhoto).toBeDefined();
+      });
+
+      it('should call to the Store factory', function() {
+        Store = jasmine.createSpyObj('store', ['saveInDb']);
+        ctrl.storePhoto();
+        expect(Store.saveInDb).toHaveBeenCalled();
+      });
+
+    });
+
   });
 });

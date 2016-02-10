@@ -11,4 +11,8 @@ hotelligence.controller('photoController', [function(){
     self.moreButtons = false;
   };
 
+  this.storePhoto = function() {
+    Store.saveInDb()
+  };
+
 }]);
