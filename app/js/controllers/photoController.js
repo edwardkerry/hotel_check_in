@@ -12,7 +12,11 @@ hotelligence.controller('photoController', [function(){
   };
 
   this.storePhoto = function() {
-    Store.saveInDb()
+    var image = Webcam.snap(function(image) {
+      return image;
+    });
+    console.log(image);
+    Store.saveInDb(image);
   };
 
 }]);
