@@ -27,7 +27,8 @@ module.exports = function(config) {
 
     // list of files to exclude
     exclude: [
-      'e2e/*.js'
+      'e2e/*.js',
+      'app/photo/photo.js'
     ],
 
 

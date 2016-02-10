@@ -1,25 +1,38 @@
-describe('photoController', function(){
-  beforeEach(function(){
+describe('photoController', function() {
+      beforeEach(function() {
 
-  module('hotelligence');
-});
+        module('hotelligence');
+      });
 
-describe('photoController', function(){
+      describe('photoController', function() {
 
-  var ctrl;
+        var ctrl;
 
-  beforeEach(inject(function($controller){
-    ctrl = $controller('photoController');
-  }));
+        beforeEach(inject(function($controller) {
+          ctrl = $controller('photoController');
+        }));
 
-  console.log(ctrl);
-  // beforeEach(inject(function($controller){
+        it('initialises without a user', function() {
+          // ctrl = $controller('photoController');
+          expect(ctrl.user).toBeUndefined();
+
+        });
+
+        describe('#takephoto', function() {
 
 
-  it('initialises without a user', function(){
-    // ctrl = $controller('photoController');
-    expect(ctrl.user).toBeUndefined();
-  });
-});
+          it('should tell the webcam to freeze', function(){
+            spyOn(Webcam, "freeze");
+            ctrl.takePhoto();
+            expect(Webcam.freeze).toHaveBeenCalled();
+          });
 
+          it('should set more buttons to be true', function(){
+            ctrl.takePhoto();
+            expect(moreButtons).toBeTruthy();
+          });
+
+
+        });
+    });
 });
