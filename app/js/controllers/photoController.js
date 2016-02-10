@@ -1,4 +1,4 @@
-hotelligence.controller('photoController', [function(){
+hotelligence.controller('photoController', ['Store', function(Store){
   var self = this;
 
   this.takePhoto = function() {
@@ -12,10 +12,7 @@ hotelligence.controller('photoController', [function(){
   };
 
   this.storePhoto = function() {
-    var image = Webcam.snap(function(image) {
-      return image;
-    });
-    console.log(image);
+    var image = Store.snap();
     Store.saveInDb(image);
   };
 

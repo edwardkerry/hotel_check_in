@@ -50,15 +50,13 @@ describe('photoController', function() {
         expect(ctrl.storePhoto).toBeDefined();
       });
 
-      it('should tell the Webcam to snap the photo', function () {
-        Store = jasmine.createSpyObj('store', ['saveInDb']);
-        spyOn(Webcam, 'snap');
+      it('should tell the store factory to snap the image', function () {
         ctrl.storePhoto();
-        expect(Webcam.snap).toHaveBeenCalled();
+        expect(Store.snap).toHaveBeenCalled();
       })
 
       it('should call to the Store factory', function() {
-        Store = jasmine.createSpyObj('store', ['saveInDb']);
+        console.log(Store);
         ctrl.storePhoto();
         expect(Store.saveInDb).toHaveBeenCalled();
       });
