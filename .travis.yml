@@ -20,6 +20,8 @@ script:
   - npm test --single-run
   - node_modules/.bin/protractor public/javascripts/spec/e2e/conf.js --browser=firefox
 language: node_js
+env:
+  - CXX=g++-4.8
 node_js:
   - "4.0.0"
 before_script:
