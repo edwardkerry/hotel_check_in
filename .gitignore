@@ -6,3 +6,4 @@
 node_modules/
 app/bower_components/
 .env
+npm-debug-log
