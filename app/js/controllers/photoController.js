@@ -12,8 +12,7 @@ hotelligence.controller('photoController', ['Store', function(Store){
   };
 
   this.storePhoto = function() {
-    var image = Store.snap();
-    Store.saveInDb(image);
+    Store.saveInDb();
   };
 
 }]);

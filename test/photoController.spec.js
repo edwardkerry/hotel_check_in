@@ -1,10 +1,9 @@
 describe('photoController', function() {
-  beforeEach(function() {
-    module('hotelligence');
-  });
 
-  describe('photoController', function() {
-    var ctrl;
+  beforeEach(module('hotelligence'));
+  var ctrl;
+
+  describe('initiaization', function() {
 
     beforeEach(inject(function($controller) {
       ctrl = $controller('photoController');
@@ -14,7 +13,9 @@ describe('photoController', function() {
       expect(ctrl.user).toBeUndefined();
     });
 
-    describe('#takePhoto', function() {
+  });
+
+  describe('#takePhoto', function() {
 
       it('should tell the webcam to freeze', function(){
         spyOn(Webcam, 'freeze');
@@ -26,9 +27,10 @@ describe('photoController', function() {
         ctrl.takePhoto();
         expect(ctrl.moreButtons).toBeTruthy();
       });
-    });
 
-    describe('#retakePhoto', function() {
+  });
+
+  describe('#retakePhoto', function() {
 
       it('should unfreeze the webcam', function() {
         spyOn(Webcam, 'unfreeze');
@@ -41,27 +43,15 @@ describe('photoController', function() {
         expect(ctrl.moreButtons).toBeFalsy();
       });
 
-    });
+  });
 
-    describe('#storePhoto', function() {
-
+  describe('#storePhoto', function() {
 
       it('should be defined', function() {
         expect(ctrl.storePhoto).toBeDefined();
       });
 
-      it('should tell the store factory to snap the image', function () {
-        ctrl.storePhoto();
-        expect(Store.snap).toHaveBeenCalled();
-      })
-
-      it('should call to the Store factory', function() {
-        console.log(Store);
-        ctrl.storePhoto();
-        expect(Store.saveInDb).toHaveBeenCalled();
-      });
-
-    });
 
   });
+
 });

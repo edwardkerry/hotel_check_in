@@ -1,10 +1,9 @@
 hotelligence.factory('Store', function() {
   return {
-    snap: function() {
-
-    },
     saveInDb: function() {
-      
+      Webcam.snap(function(image) {
+
+      })
     }
-  }
-})
+  };
+});
