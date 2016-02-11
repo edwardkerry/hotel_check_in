@@ -17,7 +17,4 @@ describe('factory: Store', function() {
     store.saveInDb();
     expect(Webcam.snap).toHaveBeenCalled();
   });
-
-
-
 });
