@@ -21,7 +21,7 @@ script:
   - node_modules/.bin/protractor public/javascripts/spec/e2e/conf.js --browser=firefox
 language: node_js
 node_js:
-  - "5.5.0"
+  - "4.0.0"
 before_script:
   - npm install -g bower
   - npm install -g karma
