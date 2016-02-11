@@ -1,4 +1,4 @@
-hotelligence.factory('Store', function() {
+myApp.factory('Store', function() {
   return {
     saveInDb: function() {
       Webcam.snap(function(data) {

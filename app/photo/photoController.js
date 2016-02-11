@@ -1,4 +1,4 @@
-hotelligence.controller('photoController', ['Store', function(Store){
+myApp.controller('photoController', ['Store', function(Store){
   var self = this;
 
   this.takePhoto = function() {
