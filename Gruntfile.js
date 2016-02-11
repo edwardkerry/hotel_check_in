@@ -17,7 +17,7 @@ module.exports = function(grunt) {
     protractor: {
       options: {
         configFile: './e2e-tests/protractor-conf.js',
-        keepAlive: true,
+        keepAlive: false,
         noColor: false,
       },
       run: {
@@ -34,10 +34,12 @@ module.exports = function(grunt) {
     connect: {
       options: {
         port: 8080,
-        hostname: 'localhost'
-      },
+        hostname: 'localhost',
+
+              },
       test: {
         options: {
+
           base: ['app']
         }
       }
