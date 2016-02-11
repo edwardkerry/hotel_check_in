@@ -9,7 +9,6 @@
     Webcam.attach('#camera_image')
 
     self.takePhoto = function() {
-      console.log('Webcam.freeze')
       Webcam.freeze();
       self.moreButtons = true;
     };
