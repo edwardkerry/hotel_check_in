@@ -1,2 +1,8 @@
-app/bower_components
-node_modules
+
+#############
+## Node/Npm/Bower
+#############
+
+node_modules/
+app/bower_components/
+.env
