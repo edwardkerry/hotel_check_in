@@ -17,7 +17,8 @@ angular.module('myApp.login', ['firebase.utils', 'firebase.auth', 'ngRoute'])
     $scope.login = function(email, pass) {
       $scope.err = null;
       Auth.$authWithPassword({ email: email, password: pass }, {rememberMe: true})
-        .then(function(/* user */) {
+        .then(function(user) {
+          console.log(user);
           $location.path('/account');
         }, function(err) {
           $scope.err = errMessage(err);
