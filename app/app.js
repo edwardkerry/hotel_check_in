@@ -6,7 +6,8 @@ angular.module('myApp', [
     'myApp.security',
     'myApp.home',
     'myApp.account',
-    'myApp.login'
+    'myApp.login',
+    'myApp.photo'
   ])
 
   .config(['$routeProvider', function ($routeProvider) {

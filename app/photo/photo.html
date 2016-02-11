@@ -1,40 +1,18 @@
-<!doctype HTML>
-<html lang="en" ng-app="myApp">
- <head>
-   <meta charset="utf-8">
-   <title>Hotelligence</title>
-   <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
-   <script src="../bower_components/jquery/dist/jquery.js"></script>
-   <script src="../bower_components/angular/angular.js"></script>
-   <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-   <script src="../bower_components/angular-resource/angular-resource.js"></script>
-   <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
-   <script src="https://cdn.firebase.com/js/simple-login/1.6.2/firebase-simple-login.js"></script>
-   <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
-   <script src="../app.js"></script>
-   <script src="photoController.js"></script>
-   <script src="storeFactory.js"></script>
-
- </head>
- <body>
-   <section ng-controller="photoController as photoCtrl">
+   <!-- # Remember to inject storeFactory service -->
 
       <h1> Please submit a picture of you with your passport </h1>
         <section id="camera_image"></section>
 
-      <section ng-hide="photoCtrl.moreButtons">
-        <button ng-click="photoCtrl.takePhoto()">Take photo</button>
+        <p>{{1+1}}</p>
+      <section ng-hide="moreButtons">
+        <button ng-click="takePhoto()">Take photo</button>
       </section>
-      <section ng-show="photoCtrl.moreButtons">
-        <button ng-click="photoCtrl.retakePhoto()">Retake photo</button>
-        <button ng-click="photoCtrl.storePhoto()">Save photo</button>
+      <section ng-show="moreButtons">
+        <button ng-click="retakePhoto()">Retake photo</button>
+        <button ng-click="storePhoto()">Save photo</button>
       </section>
+
+
 
       <script src="webcam.js"></script>
-      <script src="photo.js"></script>
-
-    </section>
-
-  </body>
-
-</html>
+      <script src="streamConfig.js"></script>

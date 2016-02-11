@@ -1,7 +1,34 @@
-Webcam.set({
-  width: 640,
-  height: 480,
-  image_format: 'jpeg',
-  jpeg_quality: 90
-});
-Webcam.attach('#camera_image');
+(function (angular) {
+  "use strict";
+
+
+  var app = angular.module('myApp.photo', ['firebase', 'firebase.utils', 'firebase.auth', 'myApp.pictureStore', 'ngRoute']);
+
+  app.controller('photoController', ['Store', '$scope', function(Store, $scope){
+    var self = $scope;
+    Webcam.attach('#camera_image')
+
+    self.takePhoto = function() {
+      console.log('Webcam.freeze')
+      Webcam.freeze();
+      self.moreButtons = true;
+    };
+
+    self.retakePhoto = function() {
+      Webcam.unfreeze();
+      self.moreButtons = false;
+    };
+
+    self.storePhoto = function() {
+      Store.saveInDb();
+    };
+  }]);
+
+  app.config(['$routeProvider', function($routeProvider) {
+    $routeProvider.whenAuthenticated('/photo', {
+      templateUrl: 'photo/photo.html',
+      controller: 'photoController'
+    });
+  }]);
+
+})(angular);
