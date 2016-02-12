@@ -16,6 +16,7 @@ module.exports = function(config){
       'app/account/**/*.js',
       'app/home/**/*.js',
       'app/login/**/*.js',
+      'app/hotel_login/**/*.js',
       'app/config_test.js'
     ],
 
