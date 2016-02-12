@@ -6,7 +6,7 @@
 
   app.controller('photoController', ['Store', function(Store){
     var self = this;
-    Webcam.attach('#camera_image')
+    Webcam.attach('#camera_image');
 
     self.takePhoto = function() {
       Webcam.freeze();
@@ -25,8 +25,7 @@
 
   app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.whenAuthenticated('/photo', {
-      templateUrl: 'photo/photo.html',
-      controller: 'photoController'
+      templateUrl: 'photo/photo.html'
     });
   }]);
 
