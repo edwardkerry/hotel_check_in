@@ -1,14 +1,14 @@
 "use strict";
-angular.module('myApp.login', ['firebase.utils', 'firebase.auth', 'ngRoute'])
+angular.module('myApp.hotel_login', ['firebase.utils', 'firebase.auth', 'ngRoute'])
 
   .config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/login', {
-      controller: 'LoginCtrl',
-      templateUrl: 'login/login.html'
+    $routeProvider.when('/hotelLogin', {
+      controller: 'HotelLoginCtrl',
+      templateUrl: 'hotel_login/hotel_login.html'
     });
   }])
 
-  .controller('LoginCtrl', ['$scope', 'Auth', '$location', 'fbutil', function($scope, Auth, $location, fbutil) {
+  .controller('HotelLoginCtrl', ['$scope', 'Auth', '$location', 'fbutil', function($scope, Auth, $location, fbutil) {
     $scope.email = null;
     $scope.pass = null;
     $scope.confirm = null;
@@ -18,7 +18,7 @@ angular.module('myApp.login', ['firebase.utils', 'firebase.auth', 'ngRoute'])
       $scope.err = null;
       Auth.$authWithPassword({ email: email, password: pass }, {rememberMe: true})
         .then(function(/* user */) {
-          $location.path('/userDash');
+          $location.path('/hotelDash');
         }, function(err) {
           $scope.err = errMessage(err);
         });
@@ -35,13 +35,13 @@ angular.module('myApp.login', ['firebase.utils', 'firebase.auth', 'ngRoute'])
             return Auth.$authWithPassword({ email: email, password: pass });
           })
           .then(function(user) {
-            var ref = fbutil.ref('users', user.uid);
+            var ref = fbutil.ref('hotels', user.uid);
             return fbutil.handler(function(cb) {
               ref.set({email: email, name: name||firstPartOfEmail(email)}, cb);
             });
           })
           .then(function() {
-            $location.path('/userDash');
+            $location.path('/hotelDash');
           }, function(err) {
             $scope.err = errMessage(err);
           });
