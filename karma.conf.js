@@ -18,8 +18,15 @@ module.exports = function(config) {
       'app/login/**/*.js',
       'app/config_test.js',
       'app/userDash/**/*.js',
-      'app/hoteldash/**/*.js'
+      'app/hoteldash/**/*.js',
+      'app/config_test.js',
+      'app/photo/**/*.js',
+      'test/photoController.spec.js',
+      'app/hotel_login/**/*.js'
+
+
     ],
+    exclude: ['app/photo/streamConfig.js'],
 
     autoWatch: true,
 

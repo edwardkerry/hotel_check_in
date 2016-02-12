@@ -4,6 +4,7 @@ describe('my app', function() {
 
   it('should automatically redirect to /home when location hash/fragment is empty', function() {
     browser.get('index.html');
+
     expect(browser.getLocationAbsUrl()).toMatch("/home");
   });
 
@@ -55,6 +56,7 @@ describe('my app', function() {
          browser.get('index.html#/account');
          expect(browser.getLocationAbsUrl()).toMatch('/login');
       });
+
    });
 
    describe('login', function() {
@@ -65,5 +67,6 @@ describe('my app', function() {
       it('should render login when user navigates to /login', function() {
          expect(element.all(by.css('[ng-view] h2')).first().getText()).toMatch(/Login Page/);
       });
+
    });
 });
