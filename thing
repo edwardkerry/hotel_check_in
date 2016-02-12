@@ -16,3 +16,11 @@
   "selenium-webdriver": "^2.48.2",
   "shelljs": "^0.2.6"
 },
+
+karma-coffee-preprocessor
+karma-html2js-preprocessor
+karma-phantomjs-launcher
+karma-requirejs
+phantomjs-prebuilt
+requirejs
+shelljs
