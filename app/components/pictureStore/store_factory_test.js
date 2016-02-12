@@ -2,7 +2,7 @@ describe('factory: Store', function() {
 
   var store;
 
-  beforeEach(module('hotelligence'));
+  beforeEach(module('myApp'));
 
   beforeEach(inject(function(Store) {
     store = Store;

@@ -21,10 +21,8 @@ module.exports = function(config) {
       'app/hoteldash/**/*.js',
       'app/config_test.js',
       'app/photo/**/*.js',
-      'test/photoController.spec.js',
-      'app/hotel_login/**/*.js'
-
-
+      'app/hotel_login/**/*.js',
+      'app/config_test.js'
     ],
     exclude: ['app/photo/streamConfig.js'],
 
