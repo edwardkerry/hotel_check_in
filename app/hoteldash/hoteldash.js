@@ -10,7 +10,7 @@
   }]);
 
   app.config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.when('/hoteldash', {
+    $routeProvider.when('/hotelDash', {
       templateUrl: 'hoteldash/hoteldash.html',
       controller: 'hoteldashController',
       resolve: {
