@@ -6,6 +6,7 @@ angular.module('myApp', [
     'myApp.home',
     'myApp.account',
     'myApp.login',
+    'myApp.photo',
     'myApp.hotel_login'
   ])
 
@@ -16,7 +17,6 @@ angular.module('myApp', [
   }])
 
   .run(['$rootScope', 'Auth', function($rootScope, Auth) {
-    // track status of authentication
     Auth.$onAuth(function(user) {
       $rootScope.loggedIn = !!user;
     });
