@@ -30,7 +30,7 @@ module.exports = function(config) {
 
     frameworks: ['jasmine'],
 
-    reporters: ["spec", "coverage"],
+    reporters: ["spec", "progress"],
     preprocessors: {
       "**/app/*js": "coverage"
     },
