@@ -48,7 +48,7 @@ module.exports = function(config) {
     },
 
 
-    browsers: ['Chrome'],
+    browsers: ['Firefox'],
 
     plugins: [
       'karma-spec-reporter',
