@@ -16,8 +16,11 @@ module.exports = function(config){
       'app/account/**/*.js',
       'app/home/**/*.js',
       'app/login/**/*.js',
+      'app/photo/**/*.js',
+      'test/photoController.spec.js',
       'app/config_test.js'
     ],
+    exclude: ['app/photo/streamConfig.js'],
 
     autoWatch : true,
 

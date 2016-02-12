@@ -1,5 +1,3 @@
-
-
 Webcam.set({
   width: 640,
   height: 480,

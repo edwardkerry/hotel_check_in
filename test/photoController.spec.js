@@ -1,6 +1,9 @@
 describe('photoController', function() {
 
-  beforeEach(module('hotelligence'));
+  beforeEach(function() {
+    module('myApp');
+    module('myApp.photo');
+  });
   var ctrl;
 
   describe('initiaization', function() {

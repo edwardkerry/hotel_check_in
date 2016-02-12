@@ -4,8 +4,8 @@
 
   var app = angular.module('myApp.photo', ['firebase', 'firebase.utils', 'firebase.auth', 'myApp.pictureStore', 'ngRoute']);
 
-  app.controller('photoController', ['Store', '$scope', function(Store, $scope){
-    var self = $scope;
+  app.controller('photoController', ['Store', function(Store){
+    var self = this;
     Webcam.attach('#camera_image')
 
     self.takePhoto = function() {
