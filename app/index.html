@@ -15,7 +15,8 @@
 
   <ul class="menu">
     <li><a href="#/home">home</a></li>
-    <li ng-hide="loggedIn"><a href="#/login">login</a></li>
+    <li ng-hide="loggedIn"><a href="#/login">User login</a></li>
+    <li ng-hide="loggedIn"><a href="#/hotel_login">Hotel login</a></li>
     <li ng-show="loggedIn"><a href="#/account">account</a></li>
     <li ng-show="loggedIn"><a href="#/photo">photo</a></li>
   </ul>
@@ -52,6 +53,6 @@
   <script src="account/account.js"></script>
   <script src="login/login.js"></script>
   <script src="photo/photo.js"></script>
-
+  <script src="hotel_login/hotel_login.js"></script>
 </body>
 </html>
