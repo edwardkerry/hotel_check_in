@@ -18,7 +18,7 @@ angular.module('myApp.login', ['firebase.utils', 'firebase.auth', 'ngRoute'])
       $scope.err = null;
       Auth.$authWithPassword({ email: email, password: pass }, {rememberMe: true})
         .then(function(/* user */) {
-          $location.path('/account');
+          $location.path('/userDash');
         }, function(err) {
           $scope.err = errMessage(err);
         });
@@ -41,7 +41,7 @@ angular.module('myApp.login', ['firebase.utils', 'firebase.auth', 'ngRoute'])
             });
           })
           .then(function() {
-            $location.path('/account');
+            $location.path('/userDash');
           }, function(err) {
             $scope.err = errMessage(err);
           });
