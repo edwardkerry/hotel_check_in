@@ -2,7 +2,7 @@
 angular.module('myApp.hotel_login', ['firebase.utils', 'firebase.auth', 'ngRoute'])
 
   .config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/hotel_login', {
+    $routeProvider.when('/hotelLogin', {
       controller: 'HotelLoginCtrl',
       templateUrl: 'hotel_login/hotel_login.html'
     });
@@ -18,7 +18,7 @@ angular.module('myApp.hotel_login', ['firebase.utils', 'firebase.auth', 'ngRoute
       $scope.err = null;
       Auth.$authWithPassword({ email: email, password: pass }, {rememberMe: true})
         .then(function(/* user */) {
-          $location.path('/hoteldash');
+          $location.path('/hotelDash');
         }, function(err) {
           $scope.err = errMessage(err);
         });
@@ -41,7 +41,7 @@ angular.module('myApp.hotel_login', ['firebase.utils', 'firebase.auth', 'ngRoute
             });
           })
           .then(function() {
-            $location.path('/hoteldash');
+            $location.path('/hotelDash');
           }, function(err) {
             $scope.err = errMessage(err);
           });
