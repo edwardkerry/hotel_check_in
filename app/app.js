@@ -5,7 +5,9 @@ angular.module('myApp', [
     'myApp.security',
     'myApp.home',
     'myApp.account',
-    'myApp.login'
+    'myApp.login',
+    'myApp.hoteldash',
+    'myApp.userDash'
   ])
 
   .config(['$routeProvider', function ($routeProvider) {

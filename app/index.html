@@ -17,6 +17,10 @@
     <li><a href="#/home">home</a></li>
     <li ng-hide="loggedIn"><a href="#/login">login</a></li>
     <li ng-show="loggedIn"><a href="#/account">account</a></li>
+    <li ng-show="loggedIn"><a href="#/userDash">Dashboard</a></li>
+    <li ng-show="loggedIn"><a href="#/hoteldash">Hotelligence Dashboard</a></li>
+
+
   </ul>
 
   <div ng-view></div>
@@ -46,5 +50,7 @@
   <script src="home/home.js"></script>
   <script src="account/account.js"></script>
   <script src="login/login.js"></script>
+  <script src="userDash/userDash.js"></script>
+  <script src="hoteldash/hoteldash.js"></script>
 </body>
 </html>
