@@ -1,9 +1,9 @@
-module.exports = function(config){
+module.exports = function(config) {
   config.set({
 
-    basePath : './',
+    basePath: './',
 
-    files : [
+    files: [
       'app/bower_components/angular/angular.js',
       'app/bower_components/angular-route/angular-route.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
@@ -16,37 +16,50 @@ module.exports = function(config){
       'app/account/**/*.js',
       'app/home/**/*.js',
       'app/login/**/*.js',
+      'app/config_test.js',
+      'app/userDash/**/*.js',
+      'app/hoteldash/**/*.js',
+      'app/config_test.js',
       'app/photo/**/*.js',
       'app/hotel_login/**/*.js',
       'app/config_test.js'
     ],
     exclude: ['app/photo/streamConfig.js'],
 
-    autoWatch : true,
+    autoWatch: true,
 
     frameworks: ['jasmine'],
 
-    reporters: ["spec"],
-      specReporter: {
-        maxLogLines: 5,         // limit number of lines logged per test
-        suppressErrorSummary: true,  // do not print error summary
-        suppressFailed: false,  // do not print information about failed tests
-        suppressPassed: false,  // do not print information about passed tests
-        suppressSkipped: true  // do not print information about skipped tests
-      },
+    reporters: ["spec", "coverage"],
+    preprocessors: {
+      "**/app/*js": "coverage"
+    },
+    coverageReporter: {
+      type: "lcov",
+      dir: "coverage/"
+    },
+
+    specReporter: {
+      maxLogLines: 5, // limit number of lines logged per test
+      suppressErrorSummary: true, // do not print error summary
+      suppressFailed: false, // do not print information about failed tests
+      suppressPassed: false, // do not print information about passed tests
+      suppressSkipped: true // do not print information about skipped tests
+    },
 
 
-    browsers : ['Chrome'],
+    browsers: ['Chrome'],
 
-    plugins : [
-            'karma-spec-reporter',
-            'karma-chrome-launcher',
-            'karma-firefox-launcher',
-            'karma-jasmine',
-            'karma-junit-reporter'
-            ],
+    plugins: [
+      'karma-spec-reporter',
+      'karma-chrome-launcher',
+      'karma-firefox-launcher',
+      'karma-jasmine',
+      'karma-junit-reporter',
+      'karma-coverage'
+    ],
 
-    junitReporter : {
+    junitReporter: {
       outputFile: 'test_out/unit.xml',
       suite: 'unit'
     }

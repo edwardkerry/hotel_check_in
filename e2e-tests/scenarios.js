@@ -19,6 +19,36 @@ describe('my app', function() {
         toMatch(/Home/);
     });
 
+    it('should have a title', function() {
+      expect(browser.getTitle()).toEqual('Hotelligence');
+    });
+
+  });
+
+  describe('hoteldash', function() {
+
+    beforeEach(function() {
+      browser.get('index.html#/hoteldash');
+    });
+
+    it('should render hoteldash when user navigates to /hoteldash', function() {
+      expect(element.all(by.css('[ng-view] h2')).first().getText()).
+        toMatch(/Welcome to your Hotelligence Dashboard/);
+    });
+
+  });
+
+  describe('userDash', function() {
+
+    beforeEach(function() {
+      browser.get('index.html#/userDash');
+    });
+
+    it('should render home when user navigates to /userDash', function() {
+      expect(element.all(by.css('[ng-view] h2')).first().getText()).
+        toMatch(/Welcome to your Dashboard/);
+    });
+
   });
 
    describe('account', function() {

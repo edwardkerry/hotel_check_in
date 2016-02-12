@@ -10,8 +10,7 @@ module.exports = function(grunt) {
       options: {
         configFile: 'karma.conf.js'
       },
-      run: {
-      }
+      run: {}
     },
 
     protractor: {
@@ -20,8 +19,7 @@ module.exports = function(grunt) {
         keepAlive: false,
         noColor: false,
       },
-      run: {
-      }
+      run: {}
     },
     protractor_webdriver: {
       start: {
@@ -36,7 +34,7 @@ module.exports = function(grunt) {
         port: 8080,
         hostname: 'localhost',
 
-              },
+      },
       test: {
         options: {
 
@@ -45,29 +43,24 @@ module.exports = function(grunt) {
       }
     },
     coveralls: {
-    options: {
-      // LCOV coverage file relevant to every target
-      src: 'coverage-results/lcov.info',
+      options: {
+       debug: true,
+       coverageDir: 'app',
+       dryRun: true,
+       force: true,
+       recursive: true
+      },
 
-      // When true, grunt-coveralls will only print a warning rather than
-      // an error, to prevent CI builds from failing unnecessarily (e.g. if
-      // coveralls.io is down). Optional, defaults to false.
-      force: false
-    },
-    your_target: {
-      // Target-specific LCOV coverage file
-       src: 'coverage-results/extra-results-*.info'
-    },
-  },
+    }
   });
 
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-protractor-runner');
   grunt.loadNpmTasks('grunt-protractor-webdriver');
   grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-coveralls');
+  grunt.loadNpmTasks('grunt-karma-coveralls');
   grunt.registerTask('coveralls', ['coveralls']);
   grunt.registerTask('unit', ['karma']);
-  grunt.registerTask('e2e', ['connect','protractor_webdriver', 'protractor',]);
+  grunt.registerTask('e2e', ['connect', 'protractor_webdriver', 'protractor', ]);
 
 };

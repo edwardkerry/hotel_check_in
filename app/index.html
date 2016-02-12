@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en" ng-app="myApp">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,9 +9,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
-  <link rel="stylesheet" href="app.css"/>
+  <link rel="stylesheet" href="app.css" />
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
+
 <body ng-cloak>
 
   <ul class="menu">
@@ -18,7 +20,10 @@
     <li ng-hide="loggedIn"><a href="#/login">User login</a></li>
     <li ng-hide="loggedIn"><a href="#/hotel_login">Hotel login</a></li>
     <li ng-show="loggedIn"><a href="#/account">account</a></li>
+    <li ng-show="loggedIn"><a href="#/userDash">Dashboard</a></li>
+    <li ng-show="loggedIn"><a href="#/hoteldash">Hotelligence Dashboard</a></li>
     <li ng-show="loggedIn"><a href="#/photo">photo</a></li>
+
   </ul>
 
   <div ng-view></div>
@@ -52,7 +57,11 @@
   <script src="home/home.js"></script>
   <script src="account/account.js"></script>
   <script src="login/login.js"></script>
+  <script src="userDash/userDash.js"></script>
+  <script src="hoteldash/hoteldash.js"></script>
   <script src="photo/photo.js"></script>
   <script src="hotel_login/hotel_login.js"></script>
+
 </body>
+
 </html>
