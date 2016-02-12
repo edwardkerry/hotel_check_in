@@ -30,7 +30,7 @@ module.exports = function(config) {
 
     frameworks: ['jasmine'],
 
-    reporters: ["spec", "coverage"],
+    reporters: ["spec", "progress"],
     preprocessors: {
       "**/app/*js": "coverage"
     },
@@ -48,7 +48,7 @@ module.exports = function(config) {
     },
 
 
-    browsers: ['Chrome'],
+    browsers: ['Firefox'],
 
     plugins: [
       'karma-spec-reporter',
