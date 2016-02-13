@@ -16,4 +16,4 @@ before_script:
   - sleep 3
 
 after_success:
-  - cat ./coverage/Firefox\ 43.0.0\ \(Mac\ OS\ X\ 10.11.0\)/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+  - ./node_modules/coveralls/bin/coveralls.js
