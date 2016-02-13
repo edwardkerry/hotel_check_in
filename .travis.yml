@@ -15,5 +15,5 @@ before_script:
   - npm start > /dev/null &
   - sleep 3
 
-  after_success:
-    - coveralls
+after_success:
+  - coveralls
