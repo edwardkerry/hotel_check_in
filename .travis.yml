@@ -1,6 +1,7 @@
 script:
   - npm run test-single-run
   - node_modules/.bin/protractor e2e-tests/protractor-conf.js --browser=firefox
+  - istanbul cover grunt unit
 language: node_js
 node_js:
   - "5.5.0"
@@ -14,3 +15,6 @@ before_script:
   - npm install http-server -g
   - npm start > /dev/null &
   - sleep 3
+
+after_success:
+  - coveralls
