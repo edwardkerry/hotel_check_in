@@ -18,7 +18,7 @@ Installation instructions
 `$npm install`
 `$npm run test`
 `$npm start`
- visit `localhost://8089/app/index.html`
+ visit `localhost://8080/app/index.html`
 
 Guest User Stories
 -----
