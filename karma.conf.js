@@ -32,16 +32,8 @@ module.exports = function(config) {
 
     colors: true,
 
-    reporters: ["spec", "progress", "coverage", "coveralls"],
+    reporters: ["progress", "spec"],
 
-    preprocessors: {
-      "**/app/*.js": ['coverage']
-    },
-
-    coverageReporter: {
-      type: "lcov",
-      dir: "coverage/"
-    },
 
     specReporter: {
       maxLogLines: 5, // limit number of lines logged per test
@@ -59,9 +51,7 @@ module.exports = function(config) {
       'karma-chrome-launcher',
       'karma-firefox-launcher',
       'karma-jasmine',
-      'karma-junit-reporter',
-      'karma-coverage',
-      'karma-coveralls'
+      // 'karma-junit-reporter',
     ],
 
     junitReporter: {
