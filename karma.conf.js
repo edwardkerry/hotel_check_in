@@ -28,13 +28,19 @@ module.exports = function(config) {
 
     frameworks: ['jasmine'],
 
+    logLevel: config.LOG_INFO,
+
+    colors: true,
+
     reporters: ["spec", "progress", "coverage", "coveralls"],
+
     preprocessors: {
-      "**/app/*js": "coverage"
+      "**/app/*js": ['coverage']
     },
+
     coverageReporter: {
       type: "lcov",
-      dir: "coverage/"
+      dir: "../app/hoteldash/coverage"
     },
 
     specReporter: {
