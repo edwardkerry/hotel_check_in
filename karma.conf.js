@@ -16,12 +16,10 @@ module.exports = function(config) {
       'app/account/**/*.js',
       'app/home/**/*.js',
       'app/login/**/*.js',
-      'app/config_test.js',
+      'app/hotel_login/**/*.js',
       'app/userDash/**/*.js',
       'app/hoteldash/**/*.js',
-      'app/config_test.js',
       'app/photo/**/*.js',
-      'app/hotel_login/**/*.js',
       'app/config_test.js'
     ],
     exclude: ['app/photo/streamConfig.js'],
@@ -30,7 +28,7 @@ module.exports = function(config) {
 
     frameworks: ['jasmine'],
 
-    reporters: ["spec", "progress"],
+    reporters: ["spec", "progress", "coveralls"],
     preprocessors: {
       "**/app/*js": "coverage"
     },
