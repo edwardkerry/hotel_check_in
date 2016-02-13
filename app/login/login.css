@@ -5,7 +5,7 @@ html, body {
  .registration-bg {
    padding-top: 10%;
    height: 100%;
-   background-image: url('regbackg.jpg');
+   background-image: url('https://images.unsplash.com/photo-1445991842772-097fea258e7b?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=25e4032d21105f9dd907bdf9110d4af0');
    -moz-background-size: cover;
    -webkit-background-size: cover;
    -o-background-size: cover;
@@ -25,10 +25,6 @@ html, body {
    border: 1px solid rgba(255, 255, 255, .5);
    background: hsla(0, 100%, 100%, 0.6);
 
- }
-
- .chars {
-   opacity: 0.5;
  }
 
  .panel-body {
