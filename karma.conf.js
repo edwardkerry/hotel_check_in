@@ -40,7 +40,7 @@ module.exports = function(config) {
 
     coverageReporter: {
       type: "lcov",
-      dir: "../app/hoteldash/coverage"
+      dir: "coverage"
     },
 
     specReporter: {
@@ -60,7 +60,8 @@ module.exports = function(config) {
       'karma-firefox-launcher',
       'karma-jasmine',
       'karma-junit-reporter',
-      'karma-coverage'
+      'karma-coverage',
+      'karma-coveralls'
     ],
 
     junitReporter: {
