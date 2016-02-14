@@ -1,5 +1,5 @@
 "use strict";
-angular.module('myApp.hotel_login', ['firebase.utils', 'firebase.auth', 'ngRoute'])
+angular.module('hotelligence.hotel_login', ['firebase.utils', 'firebase.auth', 'ngRoute'])
 
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/hotelLogin', {
