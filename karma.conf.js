@@ -32,6 +32,8 @@ module.exports = function(config) {
 
     colors: true,
 
+    singleRun: true,
+
     reporters: ["progress", "spec"],
 
 
