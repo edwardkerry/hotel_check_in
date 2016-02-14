@@ -37,7 +37,8 @@ module.exports = function(config) {
     reporters: ["progress", "spec", "coverage"],
 
     preprocessors: {
-    'app/!(bower*)/!(*test).js': ['coverage']
+    'app/!(*components)/**/!(*test).js': ['coverage'],
+    'app/components/pictureStore/!(*test).js': ['coverage']
     },
 
     coverageReporter: {
