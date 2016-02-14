@@ -1,7 +1,7 @@
 (function(angular) {
   "use strict";
 
-  var app = angular.module('myApp.hoteldash', ['firebase.auth', 'firebase', 'firebase.utils', 'ngRoute']);
+  var app = angular.module('hotelligence.hoteldash', ['firebase.auth', 'firebase', 'firebase.utils', 'ngRoute']);
 
   app.controller('hoteldashController', ['$scope', 'fbutil', 'user', '$firebaseObject', 'FBURL', function ($scope, fbutil, user, $firebaseObject, FBURL) {
     $scope.syncedValue = $firebaseObject(fbutil.ref('syncedValue'));
