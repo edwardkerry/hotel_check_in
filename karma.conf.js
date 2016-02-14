@@ -34,8 +34,16 @@ module.exports = function(config) {
 
     singleRun: true,
 
-    reporters: ["progress", "spec"],
+    reporters: ["progress", "spec", "coverage"],
 
+    preprocessors: {
+    'app/!(bower*)/!(*test).js': ['coverage']
+    },
+
+    coverageReporter: {
+      type : 'lcov',
+      dir : 'coverage/'
+    },
 
     specReporter: {
       maxLogLines: 5, // limit number of lines logged per test
@@ -53,13 +61,8 @@ module.exports = function(config) {
       'karma-chrome-launcher',
       'karma-firefox-launcher',
       'karma-jasmine',
-      // 'karma-junit-reporter',
+      'karma-coverage',
     ],
-
-    junitReporter: {
-      outputFile: 'test_out/unit.xml',
-      suite: 'unit'
-    }
 
   });
 };

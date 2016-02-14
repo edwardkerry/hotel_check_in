@@ -3,7 +3,7 @@ Hotelligence
 
 [![Stories in Ready](https://badge.waffle.io/Wynndow/hotel_check_in.png?label=ready&title=Ready)](https://waffle.io/Wynndow/hotel_check_in)
 [![Build Status](https://travis-ci.org/Wynndow/hotel_check_in.svg?branch=master)](https://travis-ci.org/Wynndow/hotel_check_in)
-[![Coverage Status](https://coveralls.io/repos/github/Wynndow/hotel_check_in/badge.svg?branch=master)](https://coveralls.io/github/Wynndow/hotel_check_in?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/Wynndow/hotel_check_in/badge.svg?branch=coveralls)](https://coveralls.io/github/Wynndow/hotel_check_in?branch=coveralls)
 
 Problem statement
 -------

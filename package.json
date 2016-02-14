@@ -15,7 +15,6 @@
     "grunt-protractor-runner": "^3.0.0",
     "grunt-protractor-webdriver": "^0.2.5",
     "http-server": "^0.6.1",
-    "istanbul": "^0.4.2",
     "jasmine-core": "^2.4.1",
     "karma": "^0.13.19",
     "karma-chrome-launcher": "^0.2.2",
@@ -32,12 +31,12 @@
     "start": "http-server -a localhost -p 8080",
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
-    "test-single-run": "istanbul cover karma start karma.conf.js  --single-run",
+    "test-single-run": "karma start karma.conf.js  --single-run",
     "preupdate-webdriver": "npm install",
     "update-webdriver": "webdriver-manager update",
     "preprotractor": "npm run update-webdriver",
     "protractor": "protractor e2e-tests/protractor-conf.js",
-    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "coveralls": "cat ./coverage/**/lcov.info | ./node_modules/coveralls/bin/coveralls.js push" 
   },
   "dependencies": {
     "firebase": "^2.4.0"
