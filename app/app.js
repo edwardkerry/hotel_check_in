@@ -1,15 +1,15 @@
 'use strict';
 
-angular.module('myApp', [
-  'myApp.config',
-  'myApp.security',
-  'myApp.home',
-  'myApp.account',
-  'myApp.login',
-  'myApp.hotel_login',
-  'myApp.hoteldash',
-  'myApp.userDash',
-  'myApp.photo'
+angular.module('hotelligence', [
+  'hotelligence.config',
+  'hotelligence.security',
+  'hotelligence.home',
+  'hotelligence.account',
+  'hotelligence.login',
+  'hotelligence.hotel_login',
+  'hotelligence.hoteldash',
+  'hotelligence.userDash',
+  'hotelligence.photo'
 
 
 ])
