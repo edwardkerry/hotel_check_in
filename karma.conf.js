@@ -37,7 +37,7 @@ module.exports = function(config) {
     reporters: ["progress", "spec", "coverage"],
 
     preprocessors: {
-    'app/!(*components)/**/!(*test).js': ['coverage'],
+    'app/!(*components)/**/!(*test|*webcam*).js': ['coverage'],
     'app/components/pictureStore/!(*test).js': ['coverage']
     },
 
