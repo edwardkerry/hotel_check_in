@@ -22,7 +22,7 @@
     <div class="container-fluid">
       <section ng-controller="logOutController as ctrl">
         <button ng-click="ctrl.doLogOut()" ng-hide="!loggedIn" class="btn btn-warning navbar-btn navbar-right">Log Out</button>
-        <p ng-hide="!loggedIn" class="navbar-text navbar-right">Signed in as {{thisUserEmail}}</p>
+        <p ng-hide="!loggedIn" class="navbar-text navbar-right">Signed in as: {{thisUserEmail}}</p>
       </section>
       <ul class="menu nav navbar-nav">
         <a class="navbar-brand" href="/app/#">
