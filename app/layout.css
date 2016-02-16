@@ -6,3 +6,15 @@
   margin-left:  15px;
   margin-right: auto;
 }
+
+.container {
+  overflow: hidden;
+}
+
+.navbar-brand {
+  padding: 0px;
+}
+
+.navbar-brand > img {
+  height: 100%;
+}
