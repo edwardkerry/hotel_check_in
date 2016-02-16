@@ -20,28 +20,36 @@ module.exports = function(config) {
       'app/account/**/*.js',
       'app/home/**/*.js',
       'app/login/**/*.js',
-      'app/config_test.js',
+      'app/hotel_login/**/*.js',
       'app/userDash/**/*.js',
       'app/hoteldash/**/*.js',
       'app/dashTables/*.js',
-      'app/config_test.js',
       'app/photo/**/*.js',
-      'app/hotel_login/**/*.js',
       'app/config_test.js'
     ],
+    
     exclude: ['app/photo/streamConfig.js'],
 
     autoWatch: true,
 
     frameworks: ['jasmine'],
 
-    reporters: ["spec", "progress"],
+    logLevel: config.LOG_INFO,
+
+    colors: true,
+
+    singleRun: true,
+
+    reporters: ["progress", "spec", "coverage"],
+
     preprocessors: {
-      "**/app/*js": "coverage"
+    'app/!(*components)/**/!(*test|*webcam*).js': ['coverage'],
+    'app/components/pictureStore/!(*test).js': ['coverage']
     },
+
     coverageReporter: {
-      type: "lcov",
-      dir: "coverage/"
+      type : 'lcov',
+      dir : 'coverage/'
     },
 
     specReporter: {
@@ -60,14 +68,8 @@ module.exports = function(config) {
       'karma-chrome-launcher',
       'karma-firefox-launcher',
       'karma-jasmine',
-      'karma-junit-reporter',
-      'karma-coverage'
+      'karma-coverage',
     ],
-
-    junitReporter: {
-      outputFile: 'test_out/unit.xml',
-      suite: 'unit'
-    }
 
   });
 };
