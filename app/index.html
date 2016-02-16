@@ -20,12 +20,13 @@
 
   <nav class="navbar navbar-default">
     <div class="container-fluid">
-      <p ng-hide="!loggedIn" class="navbar-text navbar-right">Signed in as {{thisUserEmail}}</p>
       <section ng-controller="logOutController as ctrl">
-        <button ng-click="ctrl.doLogOut()">Log Out</button>
+        <button ng-click="ctrl.doLogOut()" ng-hide="!loggedIn" class="btn btn-warning navbar-btn navbar-right">Log Out</button>
+        <p ng-hide="!loggedIn" class="navbar-text navbar-right">Signed in as {{thisUserEmail}}</p>
       </section>
       <ul class="menu nav navbar-nav">
         <a class="navbar-brand" href="#/home">Hotelligence</a>
+        <!-- <img alt="Brand" src="hotelligence.png"> -->
         <li ng-hide="loggedIn"><a href="#/login">User login</a></li>
         <li ng-hide="loggedIn"><a href="#/hotelLogin">Hotel login</a></li>
         <li ng-show="loggedIn"><a href="#/account">account</a></li>
