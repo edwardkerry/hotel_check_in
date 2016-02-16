@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app="hotelligence">
 
 <head>
   <meta charset="utf-8">
@@ -7,24 +7,37 @@
   <title>Hotelligence</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
-  <link rel="stylesheet" href="app.css" />
-  <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+  <!-- <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css"> -->
+  <!-- <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css"> -->
+  <!-- <link rel="stylesheet" href="app.css" /> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="login/login.css">
+  <!-- <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script> -->
 </head>
 
 <body ng-cloak>
 
-  <ul class="menu">
-    <li><a href="#/home">home</a></li>
-    <li ng-hide="loggedIn"><a href="#/login">User login</a></li>
-    <li ng-hide="loggedIn"><a href="#/hotelLogin">Hotel login</a></li>
-    <li ng-show="loggedIn"><a href="#/account">account</a></li>
-    <li ng-show="loggedIn"><a href="#/userDash">Dashboard</a></li>
-    <li ng-show="loggedIn"><a href="#/hotelDash">Hotelligence Dashboard</a></li>
-    <li ng-show="loggedIn"><a href="#/photo">photo</a></li>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <section ng-controller="logOutController as ctrl">
+        <button ng-click="ctrl.doLogOut()" ng-hide="!loggedIn" class="btn btn-warning navbar-btn navbar-right">Log Out</button>
+        <p ng-hide="!loggedIn" class="navbar-text navbar-right">Signed in as {{thisUserEmail}}</p>
+      </section>
+      <ul class="menu nav navbar-nav">
+        <a class="navbar-brand" href="#/home">Hotelligence</a>
+        <!-- <img alt="Brand" src="hotelligence.png"> -->
+        <li ng-hide="loggedIn"><a href="#/login">User login</a></li>
+        <li ng-hide="loggedIn"><a href="#/hotelLogin">Hotel login</a></li>
+        <li ng-show="loggedIn"><a href="#/account">account</a></li>
+        <li ng-hide="userType != 'guestUser' || !loggedIn"><a href="#/userDash">Dashboard</a></li>
+        <li ng-hide="userType != 'hotelUser' || !loggedIn"><a href="#/hotelDash">Hotelligence Dashboard</a></li>
+        <li ng-hide="userType != 'guestUser' || !loggedIn"><a href="#/photo">photo</a></li>
 
-  </ul>
+      </ul>
+    </div>
+  </nav>
+
 
   <div ng-view></div>
 
@@ -50,6 +63,7 @@
   <script src="components/reverse/reverse-filter.js"></script>
   <script src="components/security/security.js"></script>
   <script src="components/pictureStore/storeFactory.js"></script>
+  <script src="components/globalLogout/logout.js"></script>
   <script src="photo/webcam.js"></script>
   <script src="photo/streamConfig.js"></script>
 
@@ -61,6 +75,7 @@
   <script src="hoteldash/hoteldash.js"></script>
   <script src="photo/photo.js"></script>
   <script src="hotel_login/hotel_login.js"></script>
+
 
 </body>
 
