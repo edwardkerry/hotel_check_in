@@ -40,6 +40,10 @@
     "coveralls": "cat ./coverage/**/lcov.info | ./node_modules/coveralls/bin/coveralls.js push"
   },
   "dependencies": {
-    "firebase": "^2.4.0"
+    "datatables": "^1.10.9",
+    "angular-datatables": "^0.5.3",
+    "angular-xeditable": "0.0.1",
+    "firebase": "^2.4.0",
+    "jquery": "^2.2.0"
   }
 }

@@ -3,13 +3,17 @@
 
   var app = angular.module('hotelligence.account', ['firebase', 'firebase.utils', 'firebase.auth', 'ngRoute']);
 
-  app.controller('AccountCtrl', ['$scope', 'Auth', 'fbutil', 'user', '$location', '$firebaseObject',
-    function($scope, Auth, fbutil, user, $location, $firebaseObject) {
+  app.controller('AccountCtrl', ['$rootScope', '$scope', 'Auth', 'fbutil', 'user', '$location', '$firebaseObject',
+    function($rootScope, $scope, Auth, fbutil, user, $location, $firebaseObject) {
       var unbind;
       var profile = $firebaseObject(fbutil.ref('users', user.uid));
       profile.$bindTo($scope, 'profile').then(function(ub) {
         unbind = ub;
       });
+
+      // $scope.reloadRoute = function() {
+      //   $route.reload();
+      // };
 
       $scope.logout = function() {
         if (unbind) {
@@ -18,8 +22,21 @@
 
         profile.$destroy();
         Auth.$unauth();
-
+        $rootScope.loggedIn = false;
         $location.path('/login');
+
+      };
+
+      $rootScope.logout2 = function() {
+        if (unbind) {
+          unbind();
+        }
+
+        profile.$destroy();
+        Auth.$unauth();
+        $rootScope.loggedIn = false;
+        $location.path('/login');
+
       };
 
       $scope.changePassword = function(pass, confirm, newPass) {

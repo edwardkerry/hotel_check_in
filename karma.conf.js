@@ -8,6 +8,10 @@ module.exports = function(config) {
       'app/bower_components/angular-route/angular-route.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
       'app/bower_components/mockfirebase/browser/mockfirebase.js',
+      'app/bower_components/jquery/dist/jquery.min.js',
+      'app/bower_components/datatables/media/js/jquery.dataTables.js',
+      'app/bower_components/angular-datatables/dist/angular-datatables.js',
+      'app/bower_components/angular-xeditable/dist/js/xeditable.js',
       'app/bower_components/angularfire/dist/angularfire.js',
       'test/lib/**/*.js',
       'app/app.js',
@@ -19,9 +23,11 @@ module.exports = function(config) {
       'app/hotel_login/**/*.js',
       'app/userDash/**/*.js',
       'app/hoteldash/**/*.js',
+      'app/dashTables/*.js',
       'app/photo/**/*.js',
       'app/config_test.js'
     ],
+    
     exclude: ['app/photo/streamConfig.js'],
 
     autoWatch: true,

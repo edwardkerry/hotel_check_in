@@ -7,9 +7,16 @@ angular.module('hotelligence', [
   'hotelligence.account',
   'hotelligence.login',
   'hotelligence.hotel_login',
+  'hotelligence.dataTable',
   'hotelligence.hoteldash',
   'hotelligence.userDash',
-  'hotelligence.photo'
+  'hotelligence.photo',
+  'hotelligence.globalLogout',
+  'datatables',
+  'xeditable'
+
+
+
 
 
 ])
@@ -20,20 +27,38 @@ angular.module('hotelligence', [
   });
 }])
 
-.run(['$rootScope', '$location', 'Auth', '$firebaseObject', function($rootScope, $location, Auth, $firebaseObject) {
+.controller('logOutController', ['LogOutFactory', function(LogOutFactory) {
+  var self = this;
 
+  self.doLogOut = function () {
+    LogOutFactory.logout();
+  };
+
+}])
+
+.run(['$rootScope', '$location', 'Auth', 'fbutil', '$firebaseObject', 'LogOutFactory', function($rootScope, $location, Auth, fbutil, $firebaseObject, LogOutFactory) {
+  // LogOutFactory.logout();
   var thisUserType;
   var uid;
+  var thisUserEmail;
   Auth.$onAuth(function(user) {
 
+    // var navProfile = $firebaseObject(fbutil.ref);
+    // console.log(navProfile.email)
+    $firebaseObject(fbutil.ref('users', user.uid).child('email')).$loaded().then(function(email) {
+      $rootScope.thisUserEmail = email.$value;
+      // console.log($rootScope.thisUserEmail)
+      thisUserEmail = email.$value;
+      //  console.log('email:'+thisUserEmail);
+     });
     $rootScope.loggedIn = !!user;
-    console.log(user.auth.uid);
+    // console.log(user.auth.uid);
     uid = user.auth.uid;
     var ref = new Firebase('https://hotel-check-in.firebaseio.com/');
-    console.log(uid);
+    // console.log(uid);
     $firebaseObject(ref.child('users').child(uid).child('userType')).$loaded().then(function(userType) {
       var thisUserType = userType.$value;
-      console.log(thisUserType);
+      // console.log(thisUserType);
       $rootScope.userType = thisUserType;
     });
 
