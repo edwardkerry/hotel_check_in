@@ -1,5 +1,5 @@
-angular.module('hotelligence.dataTable', ['datatables', 'firebase', 'firebase.utils', 'firebase.auth', 'hotelligence.dataBaseFactory', 'ngRoute'])
-  .controller('DataTableCtrl', ['$firebaseArray', '$firebaseObject', 'fbutil', '$location', 'DatabaseFactory',
+angular.module('hotelligence.dataTable', ['datatables', 'firebase', 'firebase.utils', 'firebase.auth', 'ngRoute'])
+  .controller('DataTableCtrl', ['$firebaseArray', '$firebaseObject', 'fbutil', '$location',
 
     function DataTableCtrl($firebaseArray, $firebaseObject, DatabaseFactory) {
       var self = this;

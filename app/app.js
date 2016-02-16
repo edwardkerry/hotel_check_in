@@ -7,10 +7,13 @@ angular.module('hotelligence', [
   'hotelligence.account',
   'hotelligence.login',
   'hotelligence.hotel_login',
+  'hotelligence.dataTable',
   'hotelligence.hoteldash',
   'hotelligence.userDash',
   'hotelligence.photo',
-  'hotelligence.globalLogout'
+  'hotelligence.globalLogout',
+  'xeditable'
+
 
 
 
