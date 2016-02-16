@@ -27,6 +27,18 @@
 
       };
 
+      $rootScope.logout2 = function() {
+        if (unbind) {
+          unbind();
+        }
+
+        profile.$destroy();
+        Auth.$unauth();
+        $rootScope.loggedIn = false;
+        $location.path('/login');
+
+      };
+
       $scope.changePassword = function(pass, confirm, newPass) {
         resetMessages();
         if (!pass || !confirm || !newPass) {
