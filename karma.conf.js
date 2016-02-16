@@ -11,7 +11,6 @@ module.exports = function(config) {
       'app/bower_components/jquery/dist/jquery.min.js',
       'app/bower_components/datatables/media/js/jquery.dataTables.js',
       'app/bower_components/angular-datatables/dist/angular-datatables.js',
-      'app/bower_components/angular-datatables/dist/angular-datatables.js',
       'app/bower_components/angular-xeditable/dist/js/xeditable.js',
       'app/bower_components/angularfire/dist/angularfire.js',
       'test/lib/**/*.js',
