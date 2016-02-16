@@ -39,6 +39,10 @@
     "protractor": "protractor e2e-tests/protractor-conf.js"
   },
   "dependencies": {
-    "firebase": "^2.4.0"
+    "angular-datatables": "^0.5.3",
+    "angular-xeditable": "0.0.1",
+    "datatables": "^1.10.11",
+    "firebase": "^2.4.0",
+    "jquery": "^2.2.0"
   }
 }
