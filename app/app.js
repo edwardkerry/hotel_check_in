@@ -12,7 +12,9 @@ angular.module('hotelligence', [
   'hotelligence.userDash',
   'hotelligence.photo',
   'hotelligence.globalLogout',
+  'datatables',
   'xeditable'
+
 
 
 
