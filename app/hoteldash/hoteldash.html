@@ -14,36 +14,22 @@
         <th>stay Duration</th>
         <th>Payment Status</th>
         <th>Booking Reference</th>
-        <th>check in time</th>
         <th>room ready</th>
         <th>Checked In</th>
-        <th>Time</th>
-        <th>distance from hotel</th>
-        <th>Last Visit Date</th>
-        <th>Is Loyalty Member</th>
-        <th>Is Loyalty Member</th>
-        <th>Is ID verified</th>
 
       </tr>
     </thead>
     <tbody>
 
       <tr ng-repeat="booking in showCase.bookings"  >
-        <td editable-text="booking.firstName">{{ booking.name || 'empty' }}</td>
-        <td>{{ booking.id }}</td>
-        <td editable-text="booking.lastName" ng-model="booking.name" ng-change="showCase.updateFirebase(booking.lastName)">{{ booking.name }} </td>
-        <td>{{ booking.room_number}}</td>
-        <td>{{ booking.arrival_date }}</td>
-        <td ng-init="showCase.getImageAvatar2(booking.guestUid)">{{booking.guestUid}}<img style="width:80px" ng-src="{{showCase.images}}"></td>
+        <td>{{ booking.name}}</td>
+        <td ng-init="showCase.getImageAvatar(booking.guestUid)" class="{{booking.guestUid}}"><img style="width:80px" ng-src="{{showCase.images}}"></td>
+        <td editable-text="booking.room_number">{{ booking.room_number || 'empty' }}</td>
         <td>{{ booking.stay_duration }}</td>
         <td>{{ booking.payment_status }}</td>
         <td>{{ booking.booking_reference }}</td>
-        <td>{{ booking.scheduled_check_in_time }}</td>
-        <td>{{ booking.id }}</td>
         <td>{{ booking.room_ready }}</td>
-        <td>{{ booking.checked_in}}</td>
-        <td>{{ booking.distance_from_hotel }}</td>
-        <td>YES</td>
+        <td>{{ booking.checked_in }}</td>
 
     </tbody>
   </table>

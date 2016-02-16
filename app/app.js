@@ -12,7 +12,6 @@ angular.module('hotelligence', [
   'hotelligence.userDash',
   'hotelligence.photo',
   'hotelligence.globalLogout',
-  'hotelligence.databaseFactory',
   'datatables',
   'xeditable'
 
@@ -33,7 +32,7 @@ angular.module('hotelligence', [
 
 }])
 
-.run(['$rootScope', '$location', 'Auth', 'fbutil', '$firebaseObject', 'LogOutFactory', function($rootScope, $location, Auth, fbutil, $firebaseObject, LogOutFactory) {
+.run(['$rootScope', '$location', 'Auth', 'fbutil', '$firebaseObject', 'LogOutFactory','DatabaseFactory' ,function($rootScope, $location, Auth, fbutil, $firebaseObject, LogOutFactory, DatabaseFactory) {
   // LogOutFactory.logout();
   var thisUserType;
   var uid;
