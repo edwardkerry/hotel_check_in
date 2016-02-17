@@ -20,7 +20,7 @@
         <p>Hotelligence CheckIn: YES!</p>
 
 
-        <button ng-click="toggleModal()" class="btn btn-primary">My Docs</a>
+        <button ng-hide="docSubmit" ng-click="toggleModal()" class="btn btn-primary">My Docs</a>
         </button>
 
 
@@ -36,10 +36,10 @@
 
         </modal>
 
-        <button ng-click="toggleModal()" class="btn btn-primary">Submit Docs</a>
+        <button ng-click="toggleModal2()" class="btn btn-primary">Submit Docs</a>
         </button>
 
-        <!-- <modal title="Submit your documents" visible="showModal" style="overflow:hidden;position:auto;">
+        <modal ng-hide="docSubmit" title="Submit your documents" visible="showModal2" style="overflow:hidden;position:auto;">
           <div class="photo-box">
             <h1> Please submit a picture of you with your passport </h1>
               <section id="camera_image"></section>
@@ -49,14 +49,15 @@
               </section>
               <section ng-show="ctrl.moreButtons">
                 <button class="btn btn-info" ng-click="ctrl.retakePhoto()">Retake photo</button>
-                <button class="btn btn-primary" ng-click="ctrl.storePhoto(); toggleModal()">Save photo</button>
+                <button class="btn btn-primary" ng-click="ctrl.storePhoto(); getImageAvatar(); toggleModal2()">Save photo</button>
+                <button class="btn btn-primary" ng-click="toggleModal2()">Close</button>
               </section>
             </section>
 
             <script src="webcam.js"></script>
             <script src="streamConfig.js"></script>
           </div>
-        </modal> -->
+        </modal>
 
 
       </div>

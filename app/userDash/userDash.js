@@ -8,6 +8,7 @@
     $scope.user = user;
     $scope.FBURL = FBURL;
     $scope.showModal = false;
+    $scope.showModal2 = false;
     $scope.pic = null;
     var db = new Firebase('https://hotel-check-in.firebaseio.com/');
     $scope.uid = db.getAuth().uid;
@@ -16,9 +17,11 @@
     $scope.toggleModal = function() {
       $scope.showModal = !$scope.showModal;
     };
+    $scope.toggleModal2 = function() {
+      $scope.showModal2 = !$scope.showModal2;
+    };
     $scope.getImageAvatar = function() {
       var answerFinal = "";
-      console.log("inside getimage" + $scope.uid);
       var photoAnswer = DatabaseFactory.getUserImage($scope.uid);
       photoAnswer.then(function(answerFinal) {
         $scope.images = answerFinal;
