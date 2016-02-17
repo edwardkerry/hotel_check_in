@@ -17,12 +17,14 @@
       $scope.showModal = !$scope.showModal;
     };
     $scope.getImageAvatar = function() {
-      var answerFinal;
+      var answerFinal = "";
       console.log("inside getimage" + $scope.uid);
       var photoAnswer = DatabaseFactory.getUserImage($scope.uid);
       photoAnswer.then(function(answerFinal) {
         $scope.images = answerFinal;
       });
+    console.log($scope.images);
+    console.log(answerFinal);
        if(answerFinal !== ""){
         $scope.docSubmit = true;
       }
