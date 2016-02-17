@@ -12,6 +12,7 @@ angular.module('hotelligence.pictureStore', ['firebase', 'firebase.utils', 'fire
             image: data
           });
         });
-      }
+      },
+
     };
   });
