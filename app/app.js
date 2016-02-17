@@ -32,8 +32,9 @@ angular.module('hotelligence', [
 
 }])
 
-.run(['$rootScope', '$location', 'Auth', 'fbutil', '$firebaseObject', 'LogOutFactory','DatabaseFactory' ,function($rootScope, $location, Auth, fbutil, $firebaseObject, LogOutFactory, DatabaseFactory) {
+.run(['editableOptions','$rootScope', '$location', 'Auth', 'fbutil', '$firebaseObject', 'LogOutFactory','DatabaseFactory' ,function(editableOptions,$rootScope, $location, Auth, fbutil, $firebaseObject, LogOutFactory, DatabaseFactory) {
   // LogOutFactory.logout();
+  editableOptions.theme = 'bs3';
   var thisUserType;
   var uid;
   var thisUserEmail;

@@ -3,7 +3,7 @@
 <p class="status good" ng-show="loggedIn">Hello! You are logged in with id {{user.uid}}.</p>
 <p class="status" ng-hide="loggedIn">Welcome. You are not <a href="#/login">logged in</a></p>
 
-<div ng-cloak ng-controller="DataTableCtrl as showCase" >
+<div ng-cloak ng-controller="DataTableCtrl as showCase" ng-init="init(booking.value)" >
   <table class="row-border hover" datatable="ng">
     <thead>
       <tr>
@@ -17,14 +17,16 @@
         <th>room ready</th>
         <th>Checked In</th>
 
+
       </tr>
     </thead>
     <tbody>
 
-      <tr ng-repeat="booking in showCase.bookings"  >
+      <tr ng-repeat="booking in showCase.bookings">
+
         <td>{{ booking.name}}</td>
-        <td ng-init="showCase.getImageAvatar(booking.guestUid)" class="{{booking.guestUid}}"><img style="width:80px" ng-src="{{showCase.images}}"></td>
-        <td editable-text="booking.room_number">{{ booking.room_number || 'empty' }}</td>
+        <td ng-click="showCase.getImageAvatar(booking.guestUid)" class="{{booking.guestUid}}"><img style="width:80px" ng-src="{{showCase.images}}"></td>
+        <td e-ng-model="booking.room_number"   e-ng-click="showCase.alert(booking.room_number)" editable-text="booking.room_number">{{ booking.room_number || 'empty' }}</td>
         <td>{{ booking.stay_duration }}</td>
         <td>{{ booking.payment_status }}</td>
         <td>{{ booking.booking_reference }}</td>
