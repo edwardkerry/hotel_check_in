@@ -29,6 +29,30 @@
 
 
         </modal>
+
+        <button ng-click="toggleModal()" class="btn btn-primary">Submit Docs</a>
+        </button>
+
+        <modal title="Submit your documents" visible="showModal" style="overflow:hidden;position:auto;">
+          <div class="photo-box">
+            <h1> Please submit a picture of you with your passport </h1>
+              <section id="camera_image"></section>
+            <section ng-controller="photoController as ctrl">
+              <section ng-hide="ctrl.moreButtons">
+                <button class="btn btn-success" ng-click="ctrl.takePhoto()">Take photo</button>
+              </section>
+              <section ng-show="ctrl.moreButtons">
+                <button class="btn btn-info" ng-click="ctrl.retakePhoto()">Retake photo</button>
+                <button class="btn btn-primary" ng-click="ctrl.storePhoto(); toggleModal()">Save photo</button>
+              </section>
+            </section>
+
+            <script src="webcam.js"></script>
+            <script src="streamConfig.js"></script>
+          </div>
+        </modal>
+
+
       </div>
 
       <p>

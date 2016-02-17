@@ -8,6 +8,7 @@
     $scope.user = user;
     $scope.FBURL = FBURL;
     $scope.showModal = false;
+    $scope.pic = null;
     $scope.toggleModal = function(){
       $scope.showModal = !$scope.showModal;
     };
