@@ -1,1 +1,9 @@
+.photo-box {
+  height: 100%;
+  width: 100%;
+  padding-left: 35px;
+}
 
+.photo-btn {
+  margin-top: 10px;
+}

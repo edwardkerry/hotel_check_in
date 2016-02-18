@@ -5,7 +5,7 @@ angular.module('hotelligence.databaseFactory', ['firebase', 'firebase.utils', 'f
 .factory('DatabaseFactory', function($firebaseObject) {
   var self = this;
   var db = new Firebase('https://hotel-check-in.firebaseio.com/');
-  console.log('database factory called');
+  // console.log('database factory called');
   return {
 
     createBookingInDb: function(guestUid, bookingRef, checkedIn, guest_Uid,
