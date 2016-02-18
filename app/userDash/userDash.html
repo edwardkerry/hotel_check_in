@@ -20,12 +20,11 @@
         <p>Hotelligence CheckIn: YES!</p>
 
 
-        <button ng-hide="docSubmit" ng-click="toggleModal()" class="btn btn-primary">My Docs</a>
+        <button ng-show="docSubmit" ng-click="toggleModal()" class="btn btn-primary">My Docs</a>
         </button>
 
 
-        <p ng-hide="docSubmit"> AAHHHHH not hidden </p>
-        <p ng-show="docSubmit"> AAHHHHH mo fo! </p>
+
 
 
 
@@ -48,9 +47,9 @@
                 <button class="btn btn-success" ng-click="ctrl.takePhoto()">Take photo</button>
               </section>
               <section ng-show="ctrl.moreButtons">
-                <button class="btn btn-info" ng-click="ctrl.retakePhoto()">Retake photo</button>
-                <button class="btn btn-primary" ng-click="ctrl.storePhoto(); getImageAvatar(); toggleModal2()">Save photo</button>
-                <button class="btn btn-primary" ng-click="toggleModal2()">Close</button>
+                <button class="btn btn-info photo-btn" ng-click="ctrl.retakePhoto()">Retake photo</button>
+                <button class="btn btn-primary photo-btn" ng-click="ctrl.storePhoto(); getImageAvatar(); toggleModal2()">Save photo</button>
+                <button class="btn btn-primary photo-btn" ng-click="toggleModal2()">Close</button>
               </section>
             </section>
 

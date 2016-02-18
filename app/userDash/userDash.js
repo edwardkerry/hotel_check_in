@@ -21,16 +21,14 @@
       $scope.showModal2 = !$scope.showModal2;
     };
     $scope.getImageAvatar = function() {
-      var answerFinal = "";
       var photoAnswer = DatabaseFactory.getUserImage($scope.uid);
       photoAnswer.then(function(answerFinal) {
         $scope.images = answerFinal;
+        if($scope.images !== null){
+         $scope.docSubmit = true;
+         return $scope.docSubmit;
+       }
       });
-    console.log($scope.images);
-    console.log(answerFinal);
-       if(answerFinal !== ""){
-        $scope.docSubmit = true;
-      }
     };
   }]);
 
