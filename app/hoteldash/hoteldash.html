@@ -9,11 +9,8 @@
     <p class="status" ng-hide="loggedIn">Welcome. You are not <a href="#/login">logged in</a></p>
   </div>
 
-  <button ng-click="toggleModal()" class="btn btn-primary">My Docs</a>
-  </button>
 
   <modal title="Guest docs" visible="showModal" style="overflow:hidden;position:auto;">
-    <!-- <button ng-click="showCase.getImageAvatar(booking.guestUid)" class="btn btn-default {{booking.guestUid}}"> -->
     <img ng-src="{{showCase.images}}" style="width:100%;height:100%">
   </modal>
 
