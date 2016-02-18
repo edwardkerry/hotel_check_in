@@ -40,15 +40,12 @@ angular.module('hotelligence.databaseFactory', ['firebase', 'firebase.utils', 'f
     },
 
     getUserImage: function(uid) {
-      // console.log('triggered get image function');
-      // console.log('firebase object:'+ $firebaseObject(db.child('users').child(uid).child('image')));
       return $firebaseObject(db.child('users').child(uid).child('image')).$loaded().then(function(image) {
         return image.$value;
       });
     },
+    
     getCheckedInStatus: function(uid) {
-      console.log('triggered get image function');
-      // console.log('firebase object:'+ $firebaseObject(db.child('users').child(uid).child('image')));
       return $firebaseObject(db.child('users').child(uid).child('onSite')).$loaded().then(function(checkInStatus) {
         console.log("infactory");
         console.log(checkInStatus);

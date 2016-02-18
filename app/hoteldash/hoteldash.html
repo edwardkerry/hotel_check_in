@@ -24,12 +24,8 @@
     <tbody>
 
       <tr  ng-repeat="booking in showCase.bookings">
-
         <td ng-click="showCase.getImageAvatar(booking.guestUid)" >{{ booking.name}} {{showCase.bookings.length}}{{$index}}<span class="glyphicon glyphicon-camera"></span></td>
-        <td><img style="width:80px" ng-src="{{booking.photos}}">
-          <!-- <img style="width:80px" ng-src="{{showCase.bookingsDocImageArray[$index]}}">-->
-        </td>
-
+        <td><img style="width:80px" ng-src="{{booking.photos}}"></td>
         <td e-ng-model="booking.room_number" e-ng-click="showCase.updateRoomNumber(booking.room_number,$index)" editable-text="booking.room_number">{{ booking.room_number || 'empty' }}</td>
         <td>{{ booking.stay_duration }}</td>
         <td>{{ booking.payment_status }}</td>
