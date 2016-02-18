@@ -6,7 +6,7 @@
 <div ng-cloak ng-controller="DataTableCtrl as showCase" ng-init="init(booking.value)" >
   <table class="row-border hover" datatable="ng" ng-init"collectBookingUserUids()">
 
-   <img ng-src="{{showCase.bookingsDocImageArray[0]}}"/><img ng-src="{{showCase.bookingsDocImageArray}}" />
+
     <thead>
       <tr>
 
@@ -26,9 +26,10 @@
       <tr  ng-repeat="booking in showCase.bookings">
 
         <td ng-click="showCase.getImageAvatar(booking.guestUid)" >{{ booking.name}} {{showCase.bookings.length}}{{$index}}<span class="glyphicon glyphicon-camera"></span></td>
-        <!-- <td  class="{{booking.guestUid}}"></td> -->
-        <td><img style="width:80px" ng-src="{{showCase.images}}"><img style="width:80px" ng-src="{{showCase.bookingsDocImageArray[$index]}}"></td>
-        <!-- <td><img style="width:80px" ng-src="{{showCase.bookingsDocImageArray[$index]}}"></td> -->
+        <td><img style="width:80px" ng-src="{{booking.photos}}">
+          <!-- <img style="width:80px" ng-src="{{showCase.bookingsDocImageArray[$index]}}">-->
+        </td>
+
         <td e-ng-model="booking.room_number" e-ng-click="showCase.updateRoomNumber(booking.room_number,$index)" editable-text="booking.room_number">{{ booking.room_number || 'empty' }}</td>
         <td>{{ booking.stay_duration }}</td>
         <td>{{ booking.payment_status }}</td>

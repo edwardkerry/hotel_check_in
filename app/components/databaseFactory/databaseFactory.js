@@ -45,39 +45,18 @@ angular.module('hotelligence.databaseFactory', ['firebase', 'firebase.utils', 'f
       return $firebaseObject(db.child('users').child(uid).child('image')).$loaded().then(function(image) {
         return image.$value;
       });
+    },
+    getCheckedInStatus: function(uid) {
+      console.log('triggered get image function');
+      // console.log('firebase object:'+ $firebaseObject(db.child('users').child(uid).child('image')));
+      return $firebaseObject(db.child('users').child(uid).child('onSite')).$loaded().then(function(checkInStatus) {
+        console.log("infactory");
+        console.log(checkInStatus);
+        var result = checkInStatus.$value;
+        console.log(result);
+        return result;
+      });
     }
+
   };
 });
-
-
-// Create
-// create hotel/guest user uid
-// create image of user
-// create user account info
-// create hotel account info
-// create array hotel user bookings
-// create array guest user reservations
-
-// Retrieve
-// retrieve hotel/guest user uid
-// retrieve image of user
-// retrieve user account info
-// retrieve hotel account info
-// retrieve array hotel user bookings
-// retrieve array guest user reservations
-
-//update
-// update hotel/guest user uid
-// update image of user
-// update user account info
-// update hotel account info
-// update array hotel user bookings
-// update array guest user reservations
-
-// DELETE
-// delete hotel/guest user uid
-// delete image of user
-// delte user account info
-// delete hotel account info
-// delete array hotel user bookings
-// delete array guest user reservations
