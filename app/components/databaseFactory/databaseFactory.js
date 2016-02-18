@@ -8,8 +8,23 @@ angular.module('hotelligence.databaseFactory', ['firebase', 'firebase.utils', 'f
   // console.log('database factory called');
   return {
 
-    createBookingInDb: function(uid) {
+    createBookingInDb: function(guestUid, bookingRef, checkedIn, guest_Uid,
+      guestName, paymentStatus, picture, roomNumber, roomReady,
+      scheduledCheckIn, stayDuration) {
 
+      var ref = new Firebase('https://hotel-check-in.firebaseio.com/users/' + uid + '/bookings');
+      ref.push({
+        booking_reference: bookingRef,
+        checked_in: checkedIn,
+        guestUid: guest_Uid,
+        name: guestName,
+        payment_status: paymentStatus,
+        photos: picture,
+        room_number: roomNumber,
+        room_ready: roomReady,
+        scheduled_check_in_time: scheduledCheckIn,
+        stay_duration: stayDuration
+      });
     },
 
     retrieveBookingInDb: function(uid) {
