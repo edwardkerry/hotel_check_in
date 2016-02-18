@@ -38,7 +38,8 @@
         <button ng-click="toggleModal2()" class="btn btn-primary">Submit Docs</a>
         </button>
 
-        <modal ng-hide="docSubmit" title="Submit your documents" visible="showModal2" style="overflow:hidden;position:auto;">
+
+        <modal title="Submit your documents" visible="showModal2" style="overflow:hidden;position:auto;">
           <div class="photo-box">
             <h1> Please submit a picture of you with your passport </h1>
               <section id="camera_image"></section>
@@ -64,12 +65,14 @@
       <p>
         <a href="#" class="btn btn-default">More Info</a>
       </p>
+      <div ng-hide="!docSubmit" class="alert alert-success" role="alert">You have submitted your ID for verification, please download Hotelligence on your phone and you're all set!</div>
+      <div ng-hide="docSubmit" class="alert alert-danger" role="alert">You have not yet submitted your ID, please do so!</div>
     </div>
   </div>
 </div>
 
 
-<div class="table" ng-cloak ng-controller="DataTableCtrl as showCase" style="width:90%;margin-left:auto;margin-right:auto;">
+<!-- <div class="table" ng-cloak ng-controller="DataTableCtrl as showCase" style="width:90%;margin-left:auto;margin-right:auto;">
   <table class="row-border hover" datatable="ng">
     <thead>
       <tr>
@@ -96,4 +99,4 @@
 
     </tbody>
   </table>
-</div>
+</div> -->
