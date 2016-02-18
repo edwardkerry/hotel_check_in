@@ -3,7 +3,7 @@
 
   var app = angular.module('hotelligence.userDash', ['firebase.auth', 'firebase', 'firebase.utils', 'ngRoute', 'hotelligence.databaseFactory']);
 
-  app.controller('userDashController', ['$scope', 'fbutil', 'user', '$firebaseObject', 'FBURL', 'DatabaseFactory', function($scope, fbutil, user, $firebaseObject, FBURL, DatabaseFactory) {
+  app.controller('userDashController', ['$scope', 'fbutil', 'user', '$firebaseObject', 'FBURL', 'DatabaseFactory', 'Auth', function($scope, fbutil, user, $firebaseObject, FBURL, DatabaseFactory, Auth) {
     $scope.syncedValue = $firebaseObject(fbutil.ref('syncedValue'));
     $scope.user = user;
     $scope.FBURL = FBURL;
