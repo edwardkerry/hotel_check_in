@@ -4,7 +4,6 @@
     <h2>Welcome to your Dashboard</h2>
     <p>View your upcoming booking details below!</p>
   </div>
-  <!-- <p class="status good" ng-show="loggedIn">Hello! You are logged in with id {{user.uid}}.</p> -->
   <p class="status text-center" ng-hide="loggedIn">Welcome. You are not <a href="#/login">logged in</a></p>
 </div>
 
@@ -42,7 +41,7 @@
         <modal title="Submit your documents" visible="showModal2" style="overflow:hidden;position:auto;">
           <div class="photo-box">
             <h1> Please submit a picture of you with your passport </h1>
-              <section id="camera_image"></section>
+            <section id="camera_image"></section>
             <section ng-controller="photoController as ctrl">
               <section ng-hide="ctrl.moreButtons">
                 <button class="btn btn-success" ng-click="ctrl.takePhoto()">Take photo</button>
