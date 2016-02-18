@@ -19,14 +19,14 @@
       <thead>
         <tr>
 
-          <th>Name</th>
-          <th>Photos</th>
-          <th>Room Number</th>
-          <th>stay Duration</th>
-          <th>Payment Status</th>
-          <th>Booking Reference</th>
-          <th>room ready</th>
-          <th>Checked In</th>
+          <th class="text-center">Name</th>
+          <th class="text-center">Docs</th>
+          <th class="text-center">Room Number</th>
+          <th class="text-center">stay Duration</th>
+          <th class="text-center">Payment Status</th>
+          <th class="text-center">Booking Reference</th>
+          <th class="text-center">room ready</th>
+          <th class="text-center">Checked In</th>
 
 
         </tr>
@@ -36,13 +36,13 @@
         <tr ng-repeat="booking in showCase.bookings">
 
           <td>{{ booking.name}}</td>
-          <td ng-click="toggleModal(); showCase.getImageAvatar(booking.guestUid)" class="btn btn-default {{booking.guestUid}}"></td>
-          <td e-ng-model="booking.room_number" e-ng-click="showCase.alert(booking.room_number)" editable-text="booking.room_number">{{ booking.room_number || 'empty' }}</td>
-          <td>{{ booking.stay_duration }}</td>
-          <td>{{ booking.payment_status }}</td>
-          <td>{{ booking.booking_reference }}</td>
-          <td>{{ booking.room_ready }}</td>
-          <td>{{ booking.checked_in }}</td>
+          <td ng-click="toggleModal(); showCase.getImageAvatar(booking.guestUid)" class="{{booking.guestUid}} text-center"><span class="glyphicon glyphicon-camera"></span></td>
+          <td e-ng-model="booking.room_number" e-ng-click="showCase.alert(booking.room_number)" editable-text="booking.room_number" class="text-center">{{ booking.room_number || 'empty' }}</td>
+          <td class="text-center">{{ booking.stay_duration }}</td>
+          <td class="text-center">{{ booking.payment_status }}</td>
+          <td class="text-center">{{ booking.booking_reference }}</td>
+          <td class="text-center">{{ booking.room_ready }}</td>
+          <td ng-change="toggleModal()" class="text-center">{{ booking.checked_in }}</td>
 
       </tbody>
     </table>
