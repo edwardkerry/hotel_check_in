@@ -1,41 +1,50 @@
-<h2>Welcome to your Hotelligence Dashboard</h2>
 
-<p class="status good" ng-show="loggedIn">Hello! You are logged in with id {{user.uid}}.</p>
-<p class="status" ng-hide="loggedIn">Welcome. You are not <a href="#/login">logged in</a></p>
+<section ng-controller="DataTableCtrl as showCase" ng-init="init(booking.value)">
 
-<div ng-cloak ng-controller="DataTableCtrl as showCase" ng-init="init(booking.value)" >
-  <table class="row-border hover" datatable="ng" ng-init"collectBookingUserUids()">
+  <div class="jumbotron">
+    <div class="text-center">
+      <h2>Welcome to your Hotelligence Dashboard</h2>
+      <p>View your guest booking details and status below!</p>
+    </div>
+    <p class="status" ng-hide="loggedIn">Welcome. You are not <a href="#/login">logged in</a></p>
+  </div>
 
-   <img ng-src="{{showCase.bookingsDocImageArray[0]}}"/><img ng-src="{{showCase.bookingsDocImageArray}}" />
-    <thead>
-      <tr>
 
-        <th>Name</th>
-        <th>Photos</th>
-        <th>Room Number</th>
-        <th>stay Duration</th>
-        <th>Payment Status</th>
-        <th>Booking Reference</th>
-        <th>room ready</th>
-        <th>Checked In</th>
+  <modal title="Guest docs" visible="showModal" style="overflow:hidden;position:auto;">
+    <img ng-src="{{showCase.images}}" style="width:100%;height:100%">
+  </modal>
 
-      </tr>
-    </thead>
-    <tbody>
+  <div>
+    <table class="row-border hover" datatable="ng">
+      <thead>
+        <tr>
 
-      <tr  ng-repeat="booking in showCase.bookings">
+          <th>Name</th>
+          <th>Photos</th>
+          <th>Room Number</th>
+          <th>stay Duration</th>
+          <th>Payment Status</th>
+          <th>Booking Reference</th>
+          <th>room ready</th>
+          <th>Checked In</th>
 
-        <td ng-click="showCase.getImageAvatar(booking.guestUid)" >{{ booking.name}} {{showCase.bookings.length}}{{$index}}<span class="glyphicon glyphicon-camera"></span></td>
-        <!-- <td  class="{{booking.guestUid}}"></td> -->
-        <td><img style="width:80px" ng-src="{{showCase.images}}"><img style="width:80px" ng-src="{{showCase.bookingsDocImageArray[$index]}}"></td>
-        <!-- <td><img style="width:80px" ng-src="{{showCase.bookingsDocImageArray[$index]}}"></td> -->
-        <td e-ng-model="booking.room_number" e-ng-click="showCase.updateRoomNumber(booking.room_number,$index)" editable-text="booking.room_number">{{ booking.room_number || 'empty' }}</td>
-        <td>{{ booking.stay_duration }}</td>
-        <td>{{ booking.payment_status }}</td>
-        <td>{{ booking.booking_reference }}</td>
-        <td>{{ booking.room_ready }}</td>
-        <td>{{ booking.checked_in }}</td>
 
-    </tbody>
-  </table>
-</div>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr ng-repeat="booking in showCase.bookings">
+
+          <td>{{ booking.name}}</td>
+          <td ng-click="toggleModal(); showCase.getImageAvatar(booking.guestUid)" class="btn btn-default {{booking.guestUid}}"></td>
+          <td e-ng-model="booking.room_number" e-ng-click="showCase.alert(booking.room_number)" editable-text="booking.room_number">{{ booking.room_number || 'empty' }}</td>
+          <td>{{ booking.stay_duration }}</td>
+          <td>{{ booking.payment_status }}</td>
+          <td>{{ booking.booking_reference }}</td>
+          <td>{{ booking.room_ready }}</td>
+          <td>{{ booking.checked_in }}</td>
+
+      </tbody>
+    </table>
+  </div>
+</section>
