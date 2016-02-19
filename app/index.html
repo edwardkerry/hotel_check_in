@@ -33,7 +33,7 @@
             <a href="#/hotelLogin">Hotel login</a>
           </li>
           <li ng-show="loggedIn">
-            <a href="#/account">Account</a>
+            <a href="#/account"><span class="large glyphicon glyphicon-cog"></span></a>
           </li>
           <li ng-hide="userType != 'guestUser' || !loggedIn">
             <a href="#/userDash">Dashboard</a>
@@ -84,7 +84,6 @@
     <!-- tables end -->
     <script src="app.js"></script>
     <script src="config.js"></script>
-
     <script src="components/appversion/appversion-directive.js"></script>
     <script src="components/auth/auth.js"></script>
     <script src="components/firebase.utils/firebase.utils.js"></script>
@@ -94,10 +93,8 @@
     <script src="components/pictureStore/storeFactory.js"></script>
     <script src="components/databaseFactory/databaseFactory.js"></script>
     <script src="components/globalLogout/logout.js"></script>
-
     <script src="photo/webcam.js"></script>
     <script src="photo/streamConfig.js"></script>
-
     <script src="home/home.js"></script>
     <script src="account/account.js"></script>
     <script src="login/login.js"></script>

@@ -39,7 +39,6 @@ angular.module('hotelligence', [
   var uid;
   var thisUserEmail;
   Auth.$onAuth(function(user) {
-
     // var navProfile = $firebaseObject(fbutil.ref);
     // console.log(navProfile.email)
     $firebaseObject(fbutil.ref('users', user.uid).child('email')).$loaded().then(function(email) {
@@ -48,6 +47,8 @@ angular.module('hotelligence', [
       thisUserEmail = email.$value;
       //  console.log('email:'+thisUserEmail);
      });
+
+    
     $rootScope.loggedIn = !!user;
     // console.log(user.auth.uid);
     uid = user.auth.uid;
