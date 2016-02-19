@@ -25,28 +25,28 @@
         <th class="text-center">Docs</th>
         <th class="text-center">Photo</th>
         <th class="text-center">Room Number</th>
-        <th class="text-center">stay Duration</th>
+        <th class="text-center">Stay Duration</th>
         <th class="text-center">Payment Status</th>
         <th class="text-center">Booking Reference</th>
-        <th class="text-center">room ready</th>
+        <th class="text-center">Room Ready</th>
         <th class="text-center">Checked In</th>
 
       </tr>
     </thead>
     <tbody>
 
-      <tr  ng-change=""  ng-repeat="booking in showCase.bookings "  ng-model="booking">
+      <tr  style="height:85px"ng-change=""  ng-repeat="booking in showCase.bookings "  ng-model="booking">
 
         <td>{{ booking.name}}</td>
         <td ng-click="toggleModal(); showCase.getImageAvatar(booking.guestUid)" class="{{booking.guestUid}} text-center"><span class="glyphicon glyphicon-camera"></span></td>
         <td class="text-center"><img ng-src="{{booking.photos}}" style="width:80px"/> </td>
-        <td e-ng-model="booking.room_number"
+        <td style="color:#43bdbc !important; font-weight:bold; border-bottom:none;" class="room_number" e-ng-model="booking.room_number"
          e-ng-click="showCase.checkIfEnterKeyWasPressed(booking.room_number,$event)" editable-text="booking.room_number" class="text-center">{{ booking.room_number || 'empty' }}</td>
         <td class="text-center">{{ booking.stay_duration }}</td>
         <td class="text-center">{{ booking.payment_status }}</td>
         <td class="text-center">{{ booking.booking_reference }}</td>
         <td class="text-center">{{ booking.room_ready }}</td>
-        <td ng-change="toggleModal()" ng-model="booking.checked_in" class="text-center">{{ booking.checked_in }}</td>
+        <td ng-change="" ng-model="booking.checked_in" class="text-center {{booking.checked_in}}">{{ booking.checked_in }}</td>
 
     </tbody>
   </table>

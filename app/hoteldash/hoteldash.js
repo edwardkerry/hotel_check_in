@@ -11,7 +11,7 @@
 
     $scope.toggleModal = function() {
       $scope.showModal = !$scope.showModal;
-      console.log("modal toggle");
+      console.log($scope.showModal);
     };
 
   }]);

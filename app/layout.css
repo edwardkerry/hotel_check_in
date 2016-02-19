@@ -29,7 +29,7 @@ input[type="button"], input[type="submit"], .btn {
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
-tbody tr:hover {
+/*tbody tr:hover {
   background-color: #43bdbc !important;
   color: rgb(230, 232, 233) !important;
 }
@@ -38,4 +38,16 @@ editable editable-click {
 }
 editable editable-click:hover {
   color: rgb(230, 232, 233) !important;
+}*/
+
+.NO {
+  background-color: #e74c3c;
+}
+
+.YES {
+  background-color: #27ae60;
+}
+
+.room_number:hover {
+  color: white !important;
 }
