@@ -16,8 +16,6 @@
       var uid = db.getAuth().uid;
       self.bookingsIdArray = [];
       self.bookingsDocImageArray = [];
-      self.bookingsCheckInArray = [];
-      self.bookingsArray = [];
       self.bookings = $firebaseObject(db.child('users').child(uid).child('bookings'));
 
       self.bookings.$bindTo($scope, 'booking')
@@ -25,37 +23,54 @@
           console.log("bound");
         });
 
-      $firebaseArray(db.child('users').child(uid).child('bookings')).$loaded().then(function(bookingsArray) {
 
+      $firebaseArray(db.child('users').child(uid).child('bookings')).$loaded().then(function(bookingsArray) {
+        console.log(bookingsArray);
         self.bookingsArray = bookingsArray;
+        console.log(self.bookingsArray);
 
         angular.forEach(self.bookingsArray, function(booking) {
-
+          console.log('booking fore each:!!!!!: ' + booking);
           self.bookingsIdArray.push(booking.guestUid);
         });
-
         console.log(self.bookingsIdArray);
-        console.log('bookingscheckInArray' + self.bookingsCheckInArray);
 
         var imageIndex = 0;
         angular.forEach(self.bookingsIdArray, function(bookingUserID, imageIndex) {
+          console.log('bookingID fore each:!: ' + bookingUserID);
           var userImage = DatabaseFactory.getUserImage(bookingUserID);
-          DatabaseFactory.getCheckedInStatus(bookingUserID).then(function(userStatus) {
+          console.log(userImage);
+          self.bookingsDocImageArray.push(userImage);
+          console.log('INDEX:' + imageIndex);
+          console.log(uid);
 
-            console.log(userStatus);
-            self.bookingsCheckInArray.push(userStatus);
-            imageIndex++;
-          });
+          console.log(userImage);
 
+          // db.child('users').child(uid).child('bookings').child(imageIndex).update({
+          //   // photos: userImage
+          //   photos: 'heloo'
+          // });
+          imageIndex++;
         });
-
+        console.log(self.bookingsDocImageArray);
       });
 
-      self.updateRoomNumber = function(newValue, index) {
+      self.updateRoomNumber = function(newValue,index) {
         db.child('users').child(uid).child('bookings').child(index).update({
           room_number: newValue
         });
       };
+
+
+      self.checkIfEnterKeyWasPressed = function($event){
+        var keyCode = $event.which || $event.keyCode;
+        if (keyCode === 13) {
+          db.child('users').child(uid).child('bookings').child(index).update({
+            room_number: newValue
+          });
+        }
+
+ };
 
       self.getImageAvatar = function(uid) {
         var photoAnswer = DatabaseFactory.getUserImage(uid);
@@ -64,7 +79,6 @@
         });
         return self.images;
       };
-
 
     }
 

@@ -47,6 +47,8 @@ angular.module('hotelligence', [
       thisUserEmail = email.$value;
       //  console.log('email:'+thisUserEmail);
      });
+
+    
     $rootScope.loggedIn = !!user;
     // console.log(user.auth.uid);
     uid = user.auth.uid;

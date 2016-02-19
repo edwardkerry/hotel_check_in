@@ -16,6 +16,7 @@ angular.module('hotelligence.hotel_login', ['firebase.utils', 'firebase.auth', '
     $scope.userType = 'hotelUser';
 
     $scope.login = function(email, pass) {
+
       $scope.err = null;
       Auth.$authWithPassword({ email: email, password: pass }, {rememberMe: true})
         .then(function(/* user */) {
@@ -40,6 +41,7 @@ angular.module('hotelligence.hotel_login', ['firebase.utils', 'firebase.auth', '
             return fbutil.handler(function(cb) {
               ref.set({email: email, name: name||firstPartOfEmail(email),userType: thisUserType}, cb);
             });
+            
           })
           .then(function() {
             $location.path('/hotelDash');
